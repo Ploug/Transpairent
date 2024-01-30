@@ -2,14 +2,16 @@ using Transpairent.Abstractions.Contracts;
 
 namespace Transpairent.Contracts;
 
-public class PrivacyContract : BaseContract
+public class PrivacyContract(string userConsent) : BaseContract
 {
     public override string Title => nameof(PrivacyContract);
+    public override string Description => "Will ensure data handling is done according to user consent.";
     public override IReadOnlyList<IContractRequirement> Requirements { get; } =
     [
-        new BaseContractRequirement(
-            "Data handling must be done using TranspairentData verification", //TODO Ensure that data comes in without coming out without your consent
-            ""
+        
+        new SimpleContractRequirement(
+            "The software handles personal data within user consent.",
+            "User consent: " + userConsent
         ),
     ];
 }

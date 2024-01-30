@@ -1,13 +1,7 @@
 namespace Transpairent.Abstractions.Contracts;
 
-public class ContractRequirementVerification
+public class ContractRequirementVerification(VerificationStatus verificationStatus, IContractRequirement contractRequirement)
 {
-    public ContractRequirementVerification(VerificationStatus verificationStatus, IContractRequirement contractRequirement)
-    {
-        VerificationStatus = verificationStatus;
-        ContractRequirement = contractRequirement;
-    }
-
-    public VerificationStatus VerificationStatus { get; }
-    public IContractRequirement ContractRequirement { get; }
+    public VerificationStatus VerificationStatus { get; } = verificationStatus;
+    public IContractRequirement ContractRequirement { get; } = contractRequirement;
 }
