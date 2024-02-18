@@ -1,4 +1,6 @@
-namespace Transpairent.Abstractions.Contracts;
+using Transpairent.Core.Abstractions;
+
+namespace Transpairent.Core.Contracts;
 
 public class ContractRequirementVerification(VerificationStatus verificationStatus, IContractRequirement contractRequirement)
 {

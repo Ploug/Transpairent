@@ -1,5 +1,5 @@
-﻿using Transpairent.Abstractions;
-using Transpairent.Abstractions.Contracts;
+﻿using Transpairent.Core.Abstractions;
+using Transpairent.Core.Contracts;
 
 namespace Transpairent.Core;
 

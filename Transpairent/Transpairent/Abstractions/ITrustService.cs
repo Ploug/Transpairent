@@ -1,6 +1,6 @@
-using Transpairent.Abstractions.Contracts;
+using Transpairent.Core.Contracts;
 
-namespace Transpairent.Abstractions;
+namespace Transpairent.Core.Abstractions;
 
 public interface ITrustService
 {

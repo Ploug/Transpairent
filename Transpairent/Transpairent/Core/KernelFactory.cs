@@ -1,6 +1,5 @@
-using Microsoft.Extensions.DependencyInjection;
 using Microsoft.SemanticKernel;
-using Transpairent.Abstractions;
+using Transpairent.Core.Abstractions;
 
 namespace Transpairent.Core;
 

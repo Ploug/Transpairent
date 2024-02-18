@@ -1,7 +1,6 @@
+using Transpairent.Core.Contracts;
 
-using Transpairent.Abstractions.Contracts;
-
-namespace Transpairent.Contracts;
+namespace Transpairent.Core.Contracts;
 
 public class BenevolentSoftwareContract(string primaryMission, string userConsent) : BaseContract
 {

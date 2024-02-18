@@ -1,4 +1,4 @@
-namespace Transpairent.Abstractions.Contracts;
+namespace Transpairent.Core.Contracts;
 
 public interface IContractRequirement
 {

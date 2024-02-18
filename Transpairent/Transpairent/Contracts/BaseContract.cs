@@ -1,6 +1,6 @@
-using Transpairent.Abstractions.Contracts;
+using Transpairent.Core.Contracts;
 
-namespace Transpairent.Contracts;
+namespace Transpairent.Core.Contracts;
 
 public abstract class BaseContract : IContract
 {

@@ -1,6 +1,6 @@
 using Microsoft.SemanticKernel;
 
-namespace Transpairent.Abstractions;
+namespace Transpairent.Core.Abstractions;
 
 public interface IKernelFactory
 {

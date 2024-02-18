@@ -1,4 +1,4 @@
-namespace Transpairent.Abstractions;
+namespace Transpairent.Core.Abstractions;
 
 public enum VerificationStatus
 {
