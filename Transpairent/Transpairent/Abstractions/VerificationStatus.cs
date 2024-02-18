@@ -2,7 +2,7 @@ namespace Transpairent.Core.Abstractions;
 
 public enum VerificationStatus
 {
-    Verified,
-    Unsure,
-    Denied
+    Verified = 0,
+    Unsure = 1,
+    Denied = 2
 }

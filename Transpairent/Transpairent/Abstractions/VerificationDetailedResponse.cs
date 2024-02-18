@@ -1,4 +1,4 @@
-using Transpairent.Core.Contracts;
+using Transpairent.Core.Abstractions.Contracts;
 
 namespace Transpairent.Core.Abstractions;
 

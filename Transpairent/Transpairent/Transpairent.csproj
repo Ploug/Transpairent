@@ -11,8 +11,4 @@
       <PackageReference Include="Microsoft.SemanticKernel" Version="1.4.0" />
     </ItemGroup>
 
-    <ItemGroup>
-      <Folder Include="Abstractions\Contracts\" />
-    </ItemGroup>
-
 </Project>
