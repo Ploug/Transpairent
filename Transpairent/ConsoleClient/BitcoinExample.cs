@@ -115,12 +115,14 @@ class BitcoinService
         
         var detailedVerificationResponse = await trustedDataService.AddDataAsync(new []{NoBitcoinMiningContract}, Source2);
 
+        Console.WriteLine("Provider receives following response:");
         ConsoleHelper.Output(detailedVerificationResponse);
     
         Console.WriteLine("User gets fingerprint of provider software and verifies it upholds the contract of not mining bitcoin without revealing more than necessary.");
         
         var verificationResponse = trustedDataService.VerifyData(fingerPrint);
         
+        Console.WriteLine("User receives following response:");
         ConsoleHelper.Output(verificationResponse);
     }
 }

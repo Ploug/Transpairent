@@ -12,6 +12,7 @@ public static class ConsoleHelper
         {
             Console.WriteLine($"{verification.ContractRequirement.Title}: {verification.VerificationStatus} ({verification.Reason})");
         }
+        Console.WriteLine();
     }
     
     public static void Output(VerificationResponse verificationResponse)
@@ -22,5 +23,7 @@ public static class ConsoleHelper
         {
             Console.WriteLine($"{verification.ContractRequirement.Title}: {verification.VerificationStatus}");
         }
+
+        Console.WriteLine();
     }
 }
