@@ -4,30 +4,31 @@ using Transpairent.Core.Contracts;
 
 namespace Transpairent;
 
-public class BitcoinExample
+public class CasinoAppExample
 {
-    private static string BenevolentSourcePath = "../../SourceExamples/BenevolentBitcoinApp.cs"; 
-    private static string MalicousSourcePath = "../../SourceExamples/MaliciousBitcoinApp.cs"; 
-   
+    private static string BenevolentCasinoAppSourcePath = "../../../SourceExamples/BenevolentCasinoApp.cs"; 
+    private static string MaliciousCasinoAppSource = "../../../SourceExamples/MaliciousCasinoApp.cs"; 
+
     public static async Task ExecuteAsync(ITrustedDataService trustedDataService)
     {
-        Console.WriteLine("Testing benevolent example...");
-        await BenevolentExample(trustedDataService);
+        Console.WriteLine("Testing fair example...");
+        await FairExample(trustedDataService);
+        
         Console.WriteLine("Testing malicious example...");
         await MaliciousExample(trustedDataService);
     }
-
-    private static TruthContract NoBitcoinMiningContract = new ("This source code does not contain bitcoin mining.");
     
-    private static async Task BenevolentExample(ITrustedDataService trustedDataService)
+    private static BenevolentSoftwareContract CasinoAppContract = new ("To provide a fair casino app with virtual rewards. The dice rolls are not rigged and there is no tampering with the results of the 1-6 die.", "Do not sell my data");
+
+    private static async Task FairExample(ITrustedDataService trustedDataService)
     {
-        var benevolentSource = await ConsoleHelper.LoadSourceCodeAsync(BenevolentSourcePath);
-        
+        var benevolentSource = await ConsoleHelper.LoadSourceCodeAsync(BenevolentCasinoAppSourcePath);
+
         var fingerPrint = CryptographyHelper.GenerateFingerprint(benevolentSource); 
     
         Console.WriteLine("Provider uploads source to be verified...");
         
-        var detailedVerificationResponse = await trustedDataService.AddDataAsync(new []{NoBitcoinMiningContract}, benevolentSource);
+        var detailedVerificationResponse = await trustedDataService.AddDataAsync(new []{CasinoAppContract}, benevolentSource);
 
         ConsoleHelper.Output(detailedVerificationResponse);
     
@@ -37,16 +38,16 @@ public class BitcoinExample
         
         ConsoleHelper.Output(verificationResponse);
     }
-    
+
     private static async Task MaliciousExample(ITrustedDataService trustedDataService)
     {
-        var malicousSource = await ConsoleHelper.LoadSourceCodeAsync(MalicousSourcePath);
+        var malicousSource = await ConsoleHelper.LoadSourceCodeAsync(MaliciousCasinoAppSource);
         
         var fingerPrint = CryptographyHelper.GenerateFingerprint(malicousSource); 
     
         Console.WriteLine("Provider uploads source to be verified...");
         
-        var detailedVerificationResponse = await trustedDataService.AddDataAsync(new []{NoBitcoinMiningContract}, malicousSource);
+        var detailedVerificationResponse = await trustedDataService.AddDataAsync(new []{CasinoAppContract}, malicousSource);
 
         Console.WriteLine("Provider receives following response:");
         ConsoleHelper.Output(detailedVerificationResponse);

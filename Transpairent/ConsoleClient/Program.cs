@@ -29,5 +29,5 @@ async Task ExecuteAsync(IServiceProvider serviceProvider)
 {
     var trustedDataService = serviceProvider.GetRequiredService<ITrustedDataService>();
 
-    await BitcoinExample.ExecuteAsync(trustedDataService);
+    await PositionOfTrustExample.ExecuteAsync(trustedDataService);
 }

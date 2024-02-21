@@ -4,10 +4,10 @@ using Transpairent.Core.Contracts;
 
 namespace Transpairent;
 
-public class BitcoinExample
+public class PositionOfTrustExample
 {
-    private static string BenevolentSourcePath = "../../SourceExamples/BenevolentBitcoinApp.cs"; 
-    private static string MalicousSourcePath = "../../SourceExamples/MaliciousBitcoinApp.cs"; 
+     private static string BenevolentSourcePath = "../../SourceExamples/BenevolentPositionOfTrustLogs.txt"; 
+    private static string MalicousSourcePath = "../../SourceExamples/MaliciousPositionOfTrustLogs.txt"; 
    
     public static async Task ExecuteAsync(ITrustedDataService trustedDataService)
     {
@@ -16,8 +16,8 @@ public class BitcoinExample
         Console.WriteLine("Testing malicious example...");
         await MaliciousExample(trustedDataService);
     }
-
-    private static TruthContract NoBitcoinMiningContract = new ("This source code does not contain bitcoin mining.");
+    public static TruthContract BriberyAndSelfBenefitContract = new TruthContract(
+        "The individual acts in the best interest of the public/organization, without succumbing to bribery or personal gain.");
     
     private static async Task BenevolentExample(ITrustedDataService trustedDataService)
     {
@@ -25,9 +25,9 @@ public class BitcoinExample
         
         var fingerPrint = CryptographyHelper.GenerateFingerprint(benevolentSource); 
     
-        Console.WriteLine("Provider uploads source to be verified...");
+        Console.WriteLine("Bodycam and microphone data embedded on the person in position of trust in addition to phone logs gets uploaded to be verified...");
         
-        var detailedVerificationResponse = await trustedDataService.AddDataAsync(new []{NoBitcoinMiningContract}, benevolentSource);
+        var detailedVerificationResponse = await trustedDataService.AddDataAsync(new []{BriberyAndSelfBenefitContract}, benevolentSource);
 
         ConsoleHelper.Output(detailedVerificationResponse);
     
@@ -43,10 +43,10 @@ public class BitcoinExample
         var malicousSource = await ConsoleHelper.LoadSourceCodeAsync(MalicousSourcePath);
         
         var fingerPrint = CryptographyHelper.GenerateFingerprint(malicousSource); 
-    
-        Console.WriteLine("Provider uploads source to be verified...");
         
-        var detailedVerificationResponse = await trustedDataService.AddDataAsync(new []{NoBitcoinMiningContract}, malicousSource);
+        Console.WriteLine("Bodycam and microphone data embedded on the person in position of trust in addition to phone logs gets uploaded to be verified...");
+        
+        var detailedVerificationResponse = await trustedDataService.AddDataAsync(new []{BriberyAndSelfBenefitContract}, malicousSource);
 
         Console.WriteLine("Provider receives following response:");
         ConsoleHelper.Output(detailedVerificationResponse);
