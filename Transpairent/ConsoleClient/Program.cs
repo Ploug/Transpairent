@@ -16,7 +16,7 @@ if (string.IsNullOrWhiteSpace(apiKey))
 
 var userSettings = new UserSettings("gpt-4-0125-preview", apiKey);
 
-serviceCollection.AddSingleton<UserSettings>(userSettings);
+serviceCollection.AddSingleton(userSettings);
 serviceCollection.AddScoped<IKernelFactory, KernelFactory>();
 serviceCollection.AddScoped<ISemanticFunctionService, SemanticFunctionService>();
 serviceCollection.AddScoped<ITrustedDataService, TrustedDataService>();
