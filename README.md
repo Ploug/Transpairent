@@ -1,27 +1,43 @@
-This is a proof of concept of how 'AI zero-knowledge proofs' could be implemented.
+# AI Zero-Knowledge Proofs Concept
 
-Examples of use cases for AI zero-knowledge proofs:
-1. Have personalized software while insuring sensitive data cannot be leaked.
-2. Enable researchers to verify hypotheses based on medical data without accessing personal health information directly
-3. Insure the software on your device is benevolent.
-4. Insure a person in trust is not being bribed.
-5. Insure software operates within your personalized user consents.
-6. Verify the authenticity and ethical sourcing of products
-7. Financial institutions can prove they are adhering to regulations and not facilitating money laundering
+This repository presents a proof of concept for implementing AI zero-knowledge proofs. It explores how AI can facilitate the verification of claims or properties without exposing sensitive data or intellectual property.
 
-...without risking breach of privacy or intellectual property.
+## How To Use
+1. You currently need an IDE that runs C#
+2. Within Program.cs you will see CasinoAppExample being inituated when the program is run, while BitcoinExample and PositionOfTrustExample is uncommented.
+2.a They all work under the same principle; to verify one malicious and one benevolent example.
+3. You will be prompted to enter your OpenAI api key when running the ConsoleClient
 
-How it aims to work in short:
-1. We have a black box (secured by whatever means technology allows us).
-2. Bob uploads sensitive data into the black box tied to clearly defined data contracts.
-3. AI agents act within the black box bounded by its rules.
-4. Alice asks the AI agents questions only answerable within the boundaries of the data contracts.
-5. Bob can share 
+## Use Cases
 
-Limitations:
-There are many, this is not a working product in any way, but I will list some major ones.
-1. Transpairent or similar software would need to be executed within a type of TEE(Trusted Execution Environment)
-1.a For example do we need some type of homomorphic encryption?
-2. How to verify the uploaded sensitive data is all encompassing to the relevant contract and not tampered with?
-2.a For example there can never be a human in the loop from the beginning where sensitive data is processed, if any sensitive data is ever able to be shown on output readable by a human, we have an attack point outside the bounds of cryptographic protection.
-2.b I imagine C2PA and/or similar ideas would be required here too, to reduce the potential for tampering of input devices. 
+AI zero-knowledge proofs can be applied in various domains, including but not limited to:
+
+1. **Personalized Software**: Ensuring sensitive data cannot be leaked while offering personalized experiences.
+2. **Medical Research**: Allowing researchers to verify hypotheses based on medical data without direct access to personal health information.
+3. **Software Integrity**: Ensuring the software on your device operates benevolently.
+4. **Trust Verification**: Verifying that individuals in positions of trust are not compromised (e.g., not being bribed).
+5. **Consent Compliance**: Ensuring software operations align with personalized user consents.
+6. **Product Authenticity**: Verifying the authenticity and ethical sourcing of products.
+7. **Financial Compliance**: Proving that financial institutions adhere to regulations and do not facilitate money laundering.
+
+## How It Works
+
+The proposed system should operate largely as follows:
+
+1. A secure "black box" environment is established, leveraging cryptographic methods for security.
+2. **Alice** uploads sensitive data into the black box, tied to clearly defined data contracts.
+3. AI agents within the black box operate strictly within the bounds set by these data contracts.
+4. **Bob** queries the AI agents with questions that can only be answered within the contract's boundaries defined by **Alice**, ensuring no sensitive information is disclosed.
+
+## Limitations
+
+There are many, this is not a working product in any way, but I will list some major ones:
+
+1. **Trusted Execution Environment (TEE)**: The software requires execution within a TEE to ensure its integrity.
+   - *Homomorphic Encryption*: Might be necessary for processing data securely.
+2. **Data Integrity**: Verifying that the uploaded data is complete and unaltered is critical.
+   - *Human in the Loop*: Any potential for human-readable output poses a security risk.
+   - *Content Authenticity*: Mechanisms like C2PA may be needed to safeguard against input tampering.
+3. **AI Reliability**: Current AI capabilities may not be sufficient for zero-knowledge proofs due to the potential for being tricked or manipulated.
+
+## Further Thoughts
