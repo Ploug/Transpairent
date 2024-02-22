@@ -1,6 +1,7 @@
 # AI Zero-Knowledge Proofs Concept
 
 This repository presents a proof of concept for implementing AI zero-knowledge proofs. It explores how AI can facilitate the verification of claims or properties without exposing sensitive data or intellectual property.
+I believe this concept is important to get right if we aim for a trustless future — that is, a future where trust is inherent by design, thanks to trustless computing.
 
 ## How To Use
 1. You currently need an IDE that runs C#
@@ -22,7 +23,7 @@ AI zero-knowledge proofs can be applied in various domains, including but not li
 
 ## How It Works
 
-The proposed system should operate largely as follows:
+The proposed system would operate largely as follows:
 
 1. A secure "black box" environment is established, leveraging cryptographic methods for security.
 2. **Alice** uploads sensitive data into the black box, tied to clearly defined data contracts.
@@ -39,5 +40,3 @@ There are many, this is not a working product in any way, but I will list some m
    - *Human in the Loop*: Any potential for human-readable output poses a security risk.
    - *Content Authenticity*: Mechanisms like C2PA may be needed to safeguard against input tampering.
 3. **AI Reliability**: Current AI capabilities may not be sufficient for zero-knowledge proofs due to the potential for being tricked or manipulated.
-
-## Further Thoughts
