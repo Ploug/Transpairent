@@ -6,8 +6,8 @@ namespace Transpairent;
 
 public class BitcoinExample
 {
-    private static string BenevolentSourcePath = "../../SourceExamples/BenevolentBitcoinApp.cs"; 
-    private static string MalicousSourcePath = "../../SourceExamples/MaliciousBitcoinApp.cs"; 
+    private static string BenevolentSourcePath = "../../../SourceExamples/BenevolentBitcoinApp.cs"; 
+    private static string MalicousSourcePath = "../../../SourceExamples/MaliciousBitcoinApp.cs"; 
    
     public static async Task ExecuteAsync(ITrustedDataService trustedDataService)
     {

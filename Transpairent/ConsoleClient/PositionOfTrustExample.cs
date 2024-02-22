@@ -6,8 +6,8 @@ namespace Transpairent;
 
 public class PositionOfTrustExample
 {
-     private static string BenevolentSourcePath = "../../SourceExamples/BenevolentPositionOfTrustLogs.txt"; 
-    private static string MalicousSourcePath = "../../SourceExamples/MaliciousPositionOfTrustLogs.txt"; 
+     private static string BenevolentSourcePath = "../../../SourceExamples/BenevolentPositionOfTrustLogs.txt"; 
+    private static string MalicousSourcePath = "../../../SourceExamples/MaliciousPositionOfTrustLogs.txt"; 
    
     public static async Task ExecuteAsync(ITrustedDataService trustedDataService)
     {

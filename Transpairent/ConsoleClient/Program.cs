@@ -29,5 +29,7 @@ async Task ExecuteAsync(IServiceProvider serviceProvider)
 {
     var trustedDataService = serviceProvider.GetRequiredService<ITrustedDataService>();
 
-    await PositionOfTrustExample.ExecuteAsync(trustedDataService);
+    await CasinoAppExample.ExecuteAsync(trustedDataService);
+    //await BitcoinExample.ExecuteAsync(trustedDataService);
+    //await PositionOfTrustExample.ExecuteAsync(trustedDataService);
 }
