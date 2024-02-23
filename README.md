@@ -39,4 +39,4 @@ There are many, this is not a working product in any way, but I will list some m
 2. **Data Integrity**: Verifying that the uploaded data is complete and unaltered is critical.
    - *Human in the Loop*: Any potential for human-readable output poses a security risk.
    - *Content Authenticity*: Mechanisms like C2PA may be needed to safeguard against input tampering.
-3. **AI Reliability**: Current AI capabilities may not be sufficient for zero-knowledge proofs due to the potential for being tricked or manipulated.
+3. **AI Reliability**: AI can still be tricked and currently they are in no way at a point where AI ZKP's are possible. I do believe they will get to a point where humans or equally intelligent AIs will have a hard time tricking it, and it just takes one failed attempt of a malicious actor to break the trust
